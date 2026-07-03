@@ -1,0 +1,14 @@
+{
+  "name": "autopartes-ellic-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Catálogo web de Autopartes El Lic sincronizado con MercadoLibre",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "auth": "node sync/auth.js",
+    "sync": "node sync/sync.js"
+  }
+}

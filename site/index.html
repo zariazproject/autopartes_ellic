@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autopartes El Lic — Autopartes usadas originales en Nuevo León</title>
+  <meta name="description" content="Catálogo de autopartes usadas originales: faros, calaveras, espejos, puertas, facias y más. Compra segura vía MercadoLibre y Facebook Marketplace. Nuevo León, México.">
+  <link rel="icon" type="image/png" href="logo-camaro.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="landing">
+
+  <header class="header header-centro">
+    <a class="logo" href="index.html" aria-label="Autopartes El Lic — inicio">
+      <img class="logo-img" src="logo-camaro.png" alt="" width="190">
+      <span class="logo-text">
+        <span class="logo-line1">AUTOPARTES</span>
+        <span class="logo-line2">EL LIC</span>
+      </span>
+    </a>
+    <nav class="nav-centro">
+      <a href="catalogo.html">Catálogo</a>
+      <a href="https://www.mercadolibre.com.mx/perfil/AUTOPARTES_EL_LIC_MTY" target="_blank" rel="noopener">MercadoLibre ↗</a>
+      <a href="https://www.facebook.com/marketplace/profile/100002155911048/" target="_blank" rel="noopener">Facebook ↗</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-kicker">Nuevo León, México</span>
+      <h1>Autopartes usadas <span class="azul">originales</span></h1>
+      <p class="hero-sub">Más de <b id="hero-total">…</b> piezas en inventario · Faros, calaveras, espejos, puertas y más · Compra segura</p>
+      <form class="buscador" id="buscador" role="search">
+        <input type="search" id="busqueda" placeholder="Busca por pieza, marca o vehículo…" autocomplete="off" aria-label="Buscar piezas">
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="seccion reveal">
+    <div class="seccion-head">
+      <h2>Piezas destacadas</h2>
+      <a class="ver-todo" href="catalogo.html">Ver catálogo completo ↗</a>
+    </div>
+    <nav class="chips" id="chips" aria-label="Categorías"></nav>
+    <div class="grid grid-landing" id="destacados"></div>
+    <div class="mostrar-mas-wrap">
+      <a class="mostrar-mas" href="catalogo.html">Ver las 1,400+ piezas del catálogo</a>
+    </div>
+  </section>
+
+  <section class="vendedor reveal" id="vendedor">
+    <div class="vendedor-foto">
+      <img src="lorenzo-traje.png" alt="Lorenzo, dueño de Autopartes El Lic" loading="lazy">
+    </div>
+    <div class="vendedor-info">
+      <h2 class="vendedor-marca">Autopartes <span class="azul">El Lic</span></h2>
+      <p class="vendedor-slogan">Piezas de calidad y a precio económico</p>
+      <p class="vendedor-texto">
+        Tenemos un catálogo diferente en Facebook Marketplace — escríbeme directo.
+      </p>
+      <div class="vendedor-cta">
+        <a class="btn-fb" href="https://www.facebook.com/marketplace/profile/100002155911048/" target="_blank" rel="noopener">
+          Ver perfil en Facebook Marketplace ↗
+        </a>
+        <a class="btn-ghost" href="catalogo.html">Explorar catálogo</a>
+      </div>
+
+      <div class="comentarios" id="comentarios">
+        <p class="comentarios-titulo">Opiniones reales en Facebook Marketplace</p>
+        <div class="coment">
+          <div class="coment-avatar">G</div>
+          <div>
+            <p class="coment-nombre">Gabriel <span class="coment-fecha">· oct 2025</span> <span class="coment-stars">★★★★★</span></p>
+            <p class="coment-texto">Destacó: Puntualidad · Comunicación · Precio · Descripción del artículo</p>
+          </div>
+        </div>
+        <div class="coment">
+          <div class="coment-avatar">F</div>
+          <div>
+            <p class="coment-nombre">Francisco <span class="coment-fecha">· oct 2025</span> <span class="coment-stars">★★★★★</span></p>
+            <p class="coment-texto">Destacó: Comunicación · Precio · Descripción del artículo</p>
+          </div>
+        </div>
+        <div class="coment">
+          <div class="coment-avatar">E</div>
+          <div>
+            <p class="coment-nombre">Ezequiel <span class="coment-fecha">· mar 2026</span> <span class="coment-stars">★★★★★</span></p>
+            <p class="coment-texto">Destacó: Puntualidad · Comunicación · Precio · Descripción del artículo</p>
+          </div>
+        </div>
+        <div class="coment">
+          <div class="coment-avatar">C</div>
+          <div>
+            <p class="coment-nombre">Cristian <span class="coment-fecha">· mar 2026</span> <span class="coment-stars">★★★★★</span></p>
+            <p class="coment-texto">Destacó: Puntualidad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="local reveal" id="local">
+    <div class="local-info">
+      <span class="local-kicker">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+        Nuestro local
+      </span>
+      <h2 class="local-titulo">Visítanos en <span class="azul">nuestro local</span></h2>
+      <p class="local-zona">Pablo A. de la Garza, Monterrey</p>
+      <p class="local-dir">Argentina #406, Col. Argentina, Monterrey, N.L.</p>
+      <a class="btn-mapa" href="https://www.google.com.mx/maps/place/Argentina+406,+Argentina,+64550+Monterrey,+N.L./@25.6906336,-100.2881143,629m/data=!3m1!1e3!4m6!3m5!1s0x86629568ec3af95b:0x98759426fded236!8m2!3d25.6905565!4d-100.2861949!16s%2Fg%2F11dxdl5zql" target="_blank" rel="noopener">Cómo llegar en Google Maps ↗</a>
+    </div>
+    <div class="local-mapa">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-100.2901949%2C25.6880565%2C-100.2821949%2C25.6930565&layer=mapnik&marker=25.6905565%2C-100.2861949"
+        loading="lazy" title="Ubicación de Autopartes El Lic"></iframe>
+    </div>
+  </section>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-fondo" id="modal-fondo"></div>
+    <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="modal-cerrar" id="modal-cerrar" aria-label="Cerrar">✕</button>
+      <div class="modal-cuerpo">
+        <div class="galeria">
+          <div class="galeria-principal">
+            <button class="galeria-flecha" id="foto-prev" aria-label="Foto anterior">‹</button>
+            <img id="galeria-foto" alt="" decoding="async">
+            <button class="galeria-flecha" id="foto-next" aria-label="Foto siguiente">›</button>
+          </div>
+          <div class="galeria-thumbs" id="galeria-thumbs"></div>
+        </div>
+        <div class="modal-info">
+          <p class="modal-cat" id="modal-cat"></p>
+          <h2 id="modal-titulo"></h2>
+          <p class="modal-precio" id="modal-precio"></p>
+          <div class="modal-badges" id="modal-badges"></div>
+          <p class="modal-parte" id="modal-parte"></p>
+          <a class="btn-ml grande" id="modal-link" target="_blank" rel="noopener">Ver en MercadoLibre ↗</a>
+          <p class="modal-nota">La compra y el envío se realizan en MercadoLibre</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p><b>Autopartes El Lic</b> · Nuevo León, México</p>
+    <p>Vendemos a través de
+      <a href="https://www.mercadolibre.com.mx/perfil/AUTOPARTES_EL_LIC_MTY" target="_blank" rel="noopener">MercadoLibre</a> y
+      <a href="https://www.facebook.com/marketplace/profile/100002155911048/" target="_blank" rel="noopener">Facebook Marketplace</a>.
+    </p>
+    <p class="footer-act" id="footer-actualizado"></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo completo — Autopartes El Lic</title>
+  <meta name="description" content="Catálogo completo de autopartes usadas originales. Busca y filtra por categoría, marca y lado. Compra segura vía MercadoLibre.">
+  <link rel="icon" type="image/png" href="logo-camaro.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="catalogo">
+
+  <header class="header header-centro">
+    <a class="logo" href="index.html" aria-label="Autopartes El Lic — inicio">
+      <img class="logo-img" src="logo-camaro.png" alt="" width="190">
+      <span class="logo-text">
+        <span class="logo-line1">AUTOPARTES</span>
+        <span class="logo-line2">EL LIC</span>
+      </span>
+    </a>
+    <nav class="nav-centro">
+      <a href="index.html">Inicio</a>
+      <a href="https://www.mercadolibre.com.mx/perfil/AUTOPARTES_EL_LIC_MTY" target="_blank" rel="noopener">MercadoLibre ↗</a>
+      <a href="https://www.facebook.com/marketplace/profile/100002155911048/" target="_blank" rel="noopener">Facebook ↗</a>
+    </nav>
+  </header>
+
+  <section class="barra-catalogo">
+    <h1>Catálogo completo</h1>
+    <form class="buscador buscador-claro" id="buscador" role="search">
+      <input type="search" id="busqueda" placeholder="Busca por pieza, marca o vehículo…" autocomplete="off" aria-label="Buscar piezas">
+      <button type="submit">Buscar</button>
+    </form>
+  </section>
+
+  <nav class="chips" id="chips" aria-label="Categorías"></nav>
+
+  <div class="filtros">
+    <select id="filtro-marca" aria-label="Filtrar por marca"></select>
+    <select id="filtro-lado" aria-label="Filtrar por lado">
+      <option value="">Lado: todos</option>
+      <option value="izquierdo">Izquierdo / conductor</option>
+      <option value="derecho">Derecho / pasajero</option>
+    </select>
+    <select id="orden" aria-label="Ordenar resultados">
+      <option value="relevancia">Ordenar: relevancia</option>
+      <option value="precio-asc">Precio: menor a mayor</option>
+      <option value="precio-desc">Precio: mayor a menor</option>
+    </select>
+    <span class="conteo" id="conteo"></span>
+  </div>
+
+  <main>
+    <div class="grid" id="grid"></div>
+    <p class="sin-resultados" id="sin-resultados" hidden>No encontramos piezas con esa búsqueda. Intenta con menos palabras o revisa la ortografía.</p>
+    <div class="mostrar-mas-wrap">
+      <button class="mostrar-mas" id="mostrar-mas" hidden>Mostrar más piezas</button>
+    </div>
+  </main>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-fondo" id="modal-fondo"></div>
+    <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="modal-cerrar" id="modal-cerrar" aria-label="Cerrar">✕</button>
+      <div class="modal-cuerpo">
+        <div class="galeria">
+          <div class="galeria-principal">
+            <button class="galeria-flecha" id="foto-prev" aria-label="Foto anterior">‹</button>
+            <img id="galeria-foto" alt="" decoding="async">
+            <button class="galeria-flecha" id="foto-next" aria-label="Foto siguiente">›</button>
+          </div>
+          <div class="galeria-thumbs" id="galeria-thumbs"></div>
+        </div>
+        <div class="modal-info">
+          <p class="modal-cat" id="modal-cat"></p>
+          <h2 id="modal-titulo"></h2>
+          <p class="modal-precio" id="modal-precio"></p>
+          <div class="modal-badges" id="modal-badges"></div>
+          <p class="modal-parte" id="modal-parte"></p>
+          <a class="btn-ml grande" id="modal-link" target="_blank" rel="noopener">Ver en MercadoLibre ↗</a>
+          <p class="modal-nota">La compra y el envío se realizan en MercadoLibre</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p><b>Autopartes El Lic</b> · Nuevo León, México</p>
+    <p>Vendemos a través de
+      <a href="https://www.mercadolibre.com.mx/perfil/AUTOPARTES_EL_LIC_MTY" target="_blank" rel="noopener">MercadoLibre</a> y
+      <a href="https://www.facebook.com/marketplace/profile/100002155911048/" target="_blank" rel="noopener">Facebook Marketplace</a>.
+    </p>
+    <p class="footer-act" id="footer-actualizado"></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

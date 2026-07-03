@@ -1,0 +1,5 @@
+# Configuración de despliegue en Netlify.
+# El sitio es estático y vive en la carpeta site/. No hay paso de compilación.
+[build]
+  publish = "site"
+  command = ""

@@ -1,0 +1,54 @@
+# Robot de sincronización del catálogo con MercadoLibre.
+#
+# ESTADO: DORMANTE hasta la Fase 3. Por ahora solo se puede correr a mano
+# (workflow_dispatch). Para activarlo cada 12 h hay que:
+#   1. Crear los secretos del repo: ML_CLIENT_ID, ML_CLIENT_SECRET,
+#      ML_REFRESH_TOKEN (el actual de tokens.json) y GH_PAT (token con
+#      permiso de escribir secretos, para rotar el refresh token).
+#   2. Descomentar el bloque 'schedule' de abajo.
+#
+# Cómo maneja el refresh token de un solo uso: arranca desde el secreto
+# ML_REFRESH_TOKEN, MercadoLibre devuelve uno nuevo en cada corrida, y el
+# paso "Rotar refresh token" guarda ese nuevo valor de vuelta en el secreto.
+name: Sincronizar catálogo con MercadoLibre
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 */12 * * *'   # cada 12 horas (activar en Fase 3)
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Ejecutar sincronización
+        env:
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+          ML_REDIRECT_URI: https://www.google.com
+          ML_REFRESH_TOKEN: ${{ secrets.ML_REFRESH_TOKEN }}
+        run: node sync/sync.js
+
+      - name: Rotar refresh token (guardar el nuevo en el secreto)
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          NUEVO=$(node -e "console.log(JSON.parse(require('fs').readFileSync('tokens.json','utf8')).refresh_token)")
+          echo "$NUEVO" | gh secret set ML_REFRESH_TOKEN
+
+      - name: Publicar catálogo actualizado
+        run: |
+          git config user.name "sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add site/products.json
+          git commit -m "Actualiza catálogo automáticamente" || echo "Sin cambios en el catálogo"
+          git push

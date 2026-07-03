@@ -1,0 +1,10 @@
+# Secretos y tokens — NUNCA subir a git
+.env
+tokens.json
+
+# Dependencias y temporales
+node_modules/
+*.tmp
+
+# Configuración local de Claude Code (personal, no del proyecto)
+.claude/settings.local.json
