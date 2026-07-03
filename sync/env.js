@@ -6,12 +6,12 @@ import { fileURLToPath } from 'node:url';
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const envPath = path.join(ROOT, '.env');
-let contenido;
+let contenido = '';
 try {
   contenido = readFileSync(envPath, 'utf8');
 } catch {
-  console.error(`No se encontró el archivo .env en ${envPath}`);
-  process.exit(1);
+  // En la nube (GitHub Actions) no hay archivo .env: las variables llegan
+  // directo del entorno (los secretos del repo). Seguimos sin él.
 }
 
 for (const linea of contenido.split(/\r?\n/)) {
