@@ -43,7 +43,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           NUEVO=$(node -e "console.log(JSON.parse(require('fs').readFileSync('tokens.json','utf8')).refresh_token)")
-          echo "$NUEVO" | gh secret set ML_REFRESH_TOKEN
+          gh secret set ML_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY" --body "$NUEVO"
 
       - name: Publicar catálogo actualizado
         run: |
